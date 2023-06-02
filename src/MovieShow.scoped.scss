@@ -1,13 +1,23 @@
 #movie-show {
   background-size: cover;
-  margin:0 !important;
-  padding: 40px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.center-video {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .youtube-videos {
   aspect-ratio: 16/9;
-  width: 100%;
-  align-self: center;
+  max-width: 100%;
+}
+
+.row {
+  padding: 20px;
 }
 
 
