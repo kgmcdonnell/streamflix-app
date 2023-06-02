@@ -1,4 +1,5 @@
 import "./MovieShow.scoped.scss";
+import ReactPlayer from "react-player/youtube";
 export function MovieShow(props) {
   console.log(props);
 
@@ -6,11 +7,10 @@ export function MovieShow(props) {
     <div id="movie-show">
       {/* Movie Trailer */}
       {props.movieDetails && props.movieDetails.videos?.results.length > 0 ? (
-        <iframe
-          src={`https://www.youtube.com/embed/${props.movieDetails.videos.results[0].key}`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+        <ReactPlayer
+          className="youtube-videos"
+          url={`https://www.youtube.com/embed/${props.movieDetails.videos.results[0].key}`}
+        />
       ) : (
         <></>
       )}

@@ -4,14 +4,10 @@
   padding: 40px;
 }
 
-iframe {
-  overflow: hidden;
-  border: 0;
-  align-self: center;
-  top: 0;
-  left: 0;
-  aspect-ratio: 16 / 9;
+.youtube-videos {
+  aspect-ratio: 16/9;
   width: 100%;
+  align-self: center;
 }
 
 
