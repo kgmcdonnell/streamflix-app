@@ -1,8 +1,20 @@
 import "./MovieShow.scoped.scss";
 export function MovieShow(props) {
   console.log(props);
+
   return (
     <div id="movie-show">
+      {/* Movie Trailer */}
+      {props.movieDetails && props.movieDetails.videos?.results.length > 0 ? (
+        <iframe
+          src={`https://www.youtube.com/embed/${props.movieDetails.videos.results[0].key}`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      ) : (
+        <></>
+      )}
+
       {/* Movie Title */}
       <h3>{props.movie.original_title}</h3>
       {/* Movie Overview */}

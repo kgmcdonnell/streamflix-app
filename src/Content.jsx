@@ -28,7 +28,7 @@ export function Content() {
       .get(
         `http://api.themoviedb.org/3/movie/${movie.id}?api_key=${
           import.meta.env.VITE_TMDB_API_KEY
-        }&append_to_response=videos&append_to_response=credits,release_dates`
+        }&&append_to_response=credits,release_dates,videos`
       )
       .then(function(response) {
         setMovieDetails(response.data);
