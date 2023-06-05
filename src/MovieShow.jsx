@@ -35,7 +35,7 @@ export function MovieShow(props) {
           </p>
         </div>
         <div className="col-sm-5">
-          <div className="row" style={{ backgroundColor: "red" }}>
+          <div className="row" style={{ paddingTop: "0" }}>
             <small>
               Genres:
               {props.movieDetails && props.movieDetails.genres?.length > 0 ? (
@@ -49,7 +49,7 @@ export function MovieShow(props) {
               )}
             </small>
           </div>
-          <div className="row" style={{ backgroundColor: "blue" }}>
+          <div className="row" style={{ paddingTop: "0" }}>
             <small>
               Cast:
               {props.movieDetails && props.movieDetails.credits?.cast.length > 0 ? (
