@@ -35,26 +35,34 @@ export function MovieShow(props) {
           </p>
         </div>
         <div className="col-sm-5">
-          <small>
-            Genres:
-            {props.movieDetails && props.movieDetails.genres?.length > 0 ? (
-              props.movieDetails.genres.map(genre => <div key={genre.id}>{genre.name}</div>)
-            ) : (
-              <></>
-            )}
-          </small>
-          <small>
-            Cast:
-            {props.movieDetails && props.movieDetails.credits?.cast.length > 0 ? (
-              props.movieDetails.credits.cast.slice(0, 6).map(member => (
-                <div key={member.id}>
-                  <p style={{ margin: "0" }}>{member.name}</p>
-                </div>
-              ))
-            ) : (
-              <></>
-            )}
-          </small>
+          <div className="row" style={{ backgroundColor: "red" }}>
+            <small>
+              Genres:
+              {props.movieDetails && props.movieDetails.genres?.length > 0 ? (
+                props.movieDetails.genres.map(genre => (
+                  <div key={genre.id}>
+                    <p style={{ margin: "0", float: "left" }}>{genre.name} </p>
+                  </div>
+                ))
+              ) : (
+                <></>
+              )}
+            </small>
+          </div>
+          <div className="row" style={{ backgroundColor: "blue" }}>
+            <small>
+              Cast:
+              {props.movieDetails && props.movieDetails.credits?.cast.length > 0 ? (
+                props.movieDetails.credits.cast.slice(0, 6).map(member => (
+                  <div key={member.id}>
+                    <p style={{ margin: "0", float: "left" }}>{member.name}</p>
+                  </div>
+                ))
+              ) : (
+                <></>
+              )}
+            </small>
+          </div>
         </div>
       </div>
     </div>
