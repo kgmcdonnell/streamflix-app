@@ -24,7 +24,7 @@ export function MovieShow(props) {
         <></>
       )}
       <div className="row">
-        <div className="col-sm-7">
+        <div className="col-sm-6">
           <p>
             <small>
               {props.movieDetails.release_date} | {movieDuration(props.movieDetails.runtime)}
@@ -34,14 +34,19 @@ export function MovieShow(props) {
             <small>{props.movie.overview}</small>
           </p>
         </div>
-        <div className="col-sm-5">
+        <div className="col-sm-6">
           <div className="row" style={{ paddingTop: "0" }}>
             <small>
-              Genres:
-              {props.movieDetails && props.movieDetails.genres?.length > 0 ? (
-                props.movieDetails.genres.map(genre => (
-                  <div key={genre.id}>
-                    <p style={{ margin: "0", float: "left" }}>{genre.name} </p>
+              {props.movieDetails && props.movieDetails.credits?.cast.length > 0 ? (
+                props.movieDetails.credits.cast.slice(0, 6).map((member, index) => (
+                  <div key={member.id}>
+                    {index === 0 ? (
+                      <p style={{ margin: "0", float: "left" }}>
+                        <span style={{ color: "grey" }}>Cast:</span> {member.name},{" "}
+                      </p>
+                    ) : (
+                      <p style={{ margin: "0", float: "left" }}>{index < 5 ? member.name + ", " : member.name}</p>
+                    )}
                   </div>
                 ))
               ) : (
@@ -51,11 +56,19 @@ export function MovieShow(props) {
           </div>
           <div className="row" style={{ paddingTop: "0" }}>
             <small>
-              Cast:
-              {props.movieDetails && props.movieDetails.credits?.cast.length > 0 ? (
-                props.movieDetails.credits.cast.slice(0, 6).map(member => (
-                  <div key={member.id}>
-                    <p style={{ margin: "0", float: "left" }}>{member.name}</p>
+              {props.movieDetails && props.movieDetails.genres?.length > 0 ? (
+                props.movieDetails.genres.map((genre, index) => (
+                  <div key={genre.id}>
+                    {index === 0 ? (
+                      <p style={{ margin: "0", float: "left" }}>
+                        <span style={{ color: "grey" }}>Genres: </span>
+                        {genre.name},{" "}
+                      </p>
+                    ) : (
+                      <p style={{ margin: "0", float: "left" }}>
+                        {index !== props.movieDetails.genres.length - 1 ? genre.name + ", " : genre.name}
+                      </p>
+                    )}
                   </div>
                 ))
               ) : (
