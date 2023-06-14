@@ -3,12 +3,23 @@
   color: white;
 }
 
-.movies-index {
-  padding-left: 60px;
-  overflow-x: hidden;
+h5 {
+  margin-bottom: 20px;
 }
 
-.movie-card {
+.movies-index {
+  padding-left: 60px;
+  overflow-x:hidden;
+}
+
+// Movie Card Styling
+.card {
+  width: 15rem;
+  height: 22rem;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.card-body {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -16,8 +27,15 @@
   background-position: center center;
 }
 
+
 .movies {
   padding-bottom: 50px;
+  display:flex;
+  justify-content: "left";
+}
+
+.card:hover{
+  transform:scale(1.08)
 }
 
 
