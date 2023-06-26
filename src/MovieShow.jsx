@@ -2,8 +2,6 @@ import "./MovieShow.scoped.scss";
 import ReactPlayer from "react-player/youtube";
 
 export function MovieShow(props) {
-  console.log(props);
-
   const movieInformation = (runtime, release) => {
     const duration = runtime / 60.0;
     const hours = Math.floor(duration);
@@ -27,7 +25,11 @@ export function MovieShow(props) {
       <div className="row">
         <div className="col-sm-7">
           <p style={{ color: "rgb(224,224,224)" }}>
-            {movieInformation(props.movieDetails.runtime, props.movieDetails.release_date.split("-")[0])}
+            {props.movieDetails.release_date ? (
+              movieInformation(props.movieDetails.runtime, props.movieDetails.release_date.split("-")[0])
+            ) : (
+              <></>
+            )}
           </p>
           <p style={{ marginTop: "20px" }}>
             <small>{props.movie.overview}</small>

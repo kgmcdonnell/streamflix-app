@@ -47,8 +47,6 @@ export function Content() {
         }&include_adult=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28&with_origin_country=US&with_original_language=en`
       )
       .then(function(response) {
-        console.log("this is my response.data");
-        console.log(response.data);
         setActionMovies(response.data);
       });
 
