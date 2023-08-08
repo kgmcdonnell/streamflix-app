@@ -2,6 +2,7 @@ import "./MovieShow.scoped.scss";
 import ReactPlayer from "react-player/youtube";
 
 export function MovieShow(props) {
+  console.log(props);
   const movieInformation = (runtime, release) => {
     const duration = runtime / 60.0;
     const hours = Math.floor(duration);
